@@ -6,9 +6,11 @@ import logo from "../../../public/images/redditFace.svg"
 import logoText from "../../../public/images/redditText.svg"
 import SearchInput from './SearchInput';
 import RightContent from './RightContent/RightContent';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { auth } from '@/src/Firebase/clientApp';
 
 const Navbar: React.FC = () => {
-
+    const [user, error, loading] = useAuthState(auth)
     return (
         <Flex bg='white' height="44px" padding="6px 12px">
             <Flex align="center">
@@ -21,7 +23,7 @@ const Navbar: React.FC = () => {
             </Flex>
             {/* <Directory /> */}
             <SearchInput/>            
-            <RightContent/>
+            <RightContent user={user}/>
         </Flex>
     )
 }

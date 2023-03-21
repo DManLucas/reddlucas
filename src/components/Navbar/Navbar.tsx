@@ -15,7 +15,7 @@ const Navbar: React.FC = () => {
         <Flex bg='white' height="44px" padding="6px 12px">
             <Flex align="center">
                 <Image src={logo} alt="Logo" width="35" />
-                <Hide breakpoint='(max-width: 425px)'>
+                <Hide breakpoint='(max-width: 600px)'>
                 <Image src={logoText} 
                 alt="Logo text" 
                 width="70" />

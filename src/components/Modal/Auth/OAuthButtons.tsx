@@ -19,7 +19,7 @@ const OAuthButtons: React.FC = () => {
       <Button variant="oauth" mb={2}>
         Other provider
       </Button>
-      {error && <Text>{error.message}</Text>}
+      {error && <Text textAlign="center" fontSize="10pt" color="red" mt={2}>{error.message}</Text>}
     </Flex>
   );
 };

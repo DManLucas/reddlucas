@@ -31,10 +31,10 @@ const AuthModal: React.FC<AuthModalProps> = () => {
   const currentUser = useRecoilValue(userState);
   const [user, error] = useAuthState(auth);
 
-  // Can implement at the end
-  // useEffect(() => {
-  //   if (currentUser) handleClose();
-  // }, [currentUser]);
+
+   useEffect(() => {
+     if (currentUser) handleClose();
+   }, [currentUser]);
   const toggleView = (view: string) => {
     setModalState({
       ...modalState,

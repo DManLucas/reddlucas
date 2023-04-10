@@ -68,14 +68,10 @@ const PostItem: React.FC<PostItemContentProps> = ({
 
       console.log("Post successfully deleted");
 
-      // Could proably move this logic to onDeletePost function
+      
       if (router) router.back();
     } catch (error: any) {
       console.log("Error deleting post", error.message);
-      /**
-       * Don't need to setLoading false if no error
-       * as item will be removed from DOM
-       */
       setLoadingDelete(false);
       // setError
     }

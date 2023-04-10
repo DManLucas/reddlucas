@@ -118,6 +118,7 @@ import {
                               boxSize="28px"
                               src={item.imageURL}
                               mr={2}
+                              alt='Your image'
                             />
                           ) : (
                             <Icon

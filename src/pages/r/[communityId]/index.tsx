@@ -96,6 +96,6 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     };
   } catch (error) {
     // Could create error page here
-    console.log("getServerSideProps error - [community]", error);
+    console.log("getServerSideProps error - [communityId]", error);
   }
 }

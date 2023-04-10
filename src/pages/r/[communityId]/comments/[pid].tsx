@@ -41,10 +41,10 @@ const PostPage: React.FC<PostPageProps> = () => {
         ...prev,
         selectedPost: { id: postDoc.id, ...postDoc.data() } as Post,
       }));
-      // setPostStateValue((prev) => ({
-      //   ...prev,
-      //   selectedPost: {} as Post,
-      // }));
+      setPostStateValue((prev) => ({
+        ...prev,
+        selectedPost: {} as Post,
+      }));
     } catch (error: any) {
       console.log("fetchPost error", error.message);
     }
@@ -72,7 +72,7 @@ const PostPage: React.FC<PostPageProps> = () => {
               <>
                 <PostItem
                   post={postStateValue.selectedPost}
-                  // postIdx={postStateValue.selectedPost.postIdx}
+                  postIdx={postStateValue.selectedPost.postIdx}
                   onVote={onVote}
                   onDeletePost={onDeletePost}
                   userVoteValue={

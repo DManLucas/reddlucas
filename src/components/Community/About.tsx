@@ -86,7 +86,7 @@ const About: React.FC<AboutProps> = ({
       console.log("updateImage error", error.message);
     }
     // April 24 - removed reload
-    // window.location.reload();
+     window.location.reload();
 
     setImageLoading(false);
   };

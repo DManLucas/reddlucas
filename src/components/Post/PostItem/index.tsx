@@ -68,7 +68,6 @@ const PostItem: React.FC<PostItemContentProps> = ({
 
       console.log("Post successfully deleted");
 
-      
       if (router) router.back();
     } catch (error: any) {
       console.log("Error deleting post", error.message);

@@ -6,16 +6,16 @@ import Navbar from "../Navbar/Navbar";
 import AuthModal from "../Modal/Auth/AuthModal";
 
 type Props = {
-    children: React.ReactNode
- }
+  children: React.ReactNode;
+};
 
-const layout:React.FC<Props>  = ({children}) => {
-    
-    return (
-        <>
-        <Navbar/>
-        <main>{children}</main>
-        </>
-    )
-}
+const layout: React.FC<Props> = ({ children }) => {
+  useAuth();
+  return (
+    <>
+      <Navbar />
+      <main>{children}</main>
+    </>
+  );
+};
 export default layout;

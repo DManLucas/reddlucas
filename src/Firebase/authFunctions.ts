@@ -10,7 +10,7 @@ export const signUpWithEmailAndPassword = async (
   password: string
 ) => {};
 
-export const loginWithEmaiAndPassword = async (
+export const loginWithEmailAndPassword = async (
   email: string,
   password: string
 ) => {};

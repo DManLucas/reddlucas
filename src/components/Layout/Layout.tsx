@@ -10,7 +10,7 @@ type Props = {
 };
 
 const layout: React.FC<Props> = ({ children }) => {
-  useAuth();
+  //useAuth();
   return (
     <>
       <Navbar />

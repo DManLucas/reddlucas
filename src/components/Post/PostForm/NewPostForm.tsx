@@ -143,7 +143,6 @@ const NewPostForm: React.FC<NewPostFormProps> = ({
   };
 
   return (
-    <>
     <Flex direction="column" bg="white" borderRadius={4} mt={2}>
       <Flex width="100%">
         {formTabs.map((item, index) => (
@@ -175,7 +174,6 @@ const NewPostForm: React.FC<NewPostFormProps> = ({
         )}
       </Flex>
     </Flex>
-    </>
   );
 };
 export default NewPostForm;

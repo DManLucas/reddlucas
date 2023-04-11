@@ -16,7 +16,7 @@ export const deletePostComments = functions.firestore
   .document(`posts/{postId}`)
   .onDelete(async (snap) => {
     const postId = snap.id;
-    console.log("HERE IS POST ID", postId);
+    //console.log("HERE IS POST ID", postId);
 
     admin
       .firestore()
@@ -25,12 +25,12 @@ export const deletePostComments = functions.firestore
       .then((snapshot) => {
         snapshot.forEach((doc) => {
           if (doc.data().postId === postId) {
-            console.log("DELETING COMMENT: ", doc.id, doc.data().text);
+            //console.log("DELETING COMMENT: ", doc.id, doc.data().text);
             doc.ref.delete();
           }
         });
       })
       .catch((error) => {
-        console.log("Error deleting post comments");
+        //console.log("Error deleting post comments");
       });
   });

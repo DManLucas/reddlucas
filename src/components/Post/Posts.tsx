@@ -222,7 +222,7 @@ const Posts: React.FC<PostsProps> = ({
   }, [communityData, postStateValue.postUpdateRequired]);
 
   const getPosts = async () => {
-    console.log("WE ARE GETTING POSTS!!!");
+    //console.log("WE ARE GETTING POSTS!!!");
 
     setLoading(true);
     try {
@@ -243,12 +243,12 @@ const Posts: React.FC<PostsProps> = ({
         postUpdateRequired: false,
       }));
     } catch (error: any) {
-      console.log("getPosts error", error.message);
+      //console.log("getPosts error", error.message);
     }
     setLoading(false);
   };
 
-  console.log("HERE IS POST STATE", postStateValue);
+  //console.log("HERE IS POST STATE", postStateValue);
 
   return (
     <>

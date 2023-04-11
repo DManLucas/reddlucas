@@ -25,7 +25,7 @@ const CreateCommunityPostPage: NextPage = () => {
     }
   }, [user, loadingUser, communityStateValue.currentCommunity]);
 
-  console.log("HERE IS USER", user, loadingUser);
+  //console.log("HERE IS USER", user, loadingUser);
 
   return (
     <PageContentLayout maxWidth="1060px">

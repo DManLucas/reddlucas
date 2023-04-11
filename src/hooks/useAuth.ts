@@ -12,14 +12,14 @@ const useAuth = () => {
   const [currentUser, setCurrentUser] = useRecoilState(userState);
 
   useEffect(() => {
-    console.log("HERE IS USER", user);
+    //console.log("HERE IS USER", user);
 
     user ? setUserCookie(user) : nookies.set(undefined, "token", "");
   }, [user]);
 
   const setUserCookie = async (user: User) => {
     const token = await user.getIdToken();
-    console.log("HERE IS TOKEN", token);
+    //console.log("HERE IS TOKEN", token);
     nookies.set(undefined, "token", token);
   };
 
@@ -31,7 +31,7 @@ const useAuth = () => {
 
     const userDoc = doc(firestore, "users", user?.uid as string);
     const unsubscribe = onSnapshot(userDoc, (doc) => {
-      console.log("CURRENT DATA", doc.data());
+      //console.log("CURRENT DATA", doc.data());
       if (!doc.data()) return;
       if (currentUser) return;
       setCurrentUser(doc.data() as any);

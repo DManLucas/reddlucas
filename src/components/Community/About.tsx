@@ -72,7 +72,7 @@ const About: React.FC<AboutProps> = ({
       await updateDoc(doc(firestore, "communities", communityData.id), {
         imageURL: downloadURL,
       });
-      console.log("HERE IS DOWNLOAD URL", downloadURL);
+      //console.log("HERE IS DOWNLOAD URL", downloadURL);
 
       // April 24 - added state update
       setCommunityStateValue((prev) => ({
@@ -83,7 +83,7 @@ const About: React.FC<AboutProps> = ({
         },
       }));
     } catch (error: any) {
-      console.log("updateImage error", error.message);
+      //console.log("updateImage error", error.message);
     }
     // April 24 - removed reload
      window.location.reload();

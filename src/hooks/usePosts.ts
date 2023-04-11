@@ -82,7 +82,6 @@ const usePosts = (communityData?: Community) => {
 
        // console.log("NEW VOTE!!!", newVote);
 
-        // APRIL 25 - DON'T THINK WE NEED THIS
          newVote.id = postVoteRef.id;
 
         batch.set(postVoteRef, newVote);

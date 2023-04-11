@@ -255,6 +255,7 @@ const Posts: React.FC<PostsProps> = ({
       {loading ? (
         <PostLoader />
       ) : (
+        <>
         <Stack>
           {postStateValue.posts.map((post: Post, index) => (
             <PostItem
@@ -272,6 +273,7 @@ const Posts: React.FC<PostsProps> = ({
             />
           ))}
         </Stack>
+        </>
       )}
     </>
   );

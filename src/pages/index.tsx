@@ -41,7 +41,7 @@ const Home: NextPage = () => {
   const communityStateValue = useRecoilValue(communityState);
 
   const getUserHomePosts = async () => {
-    console.log("GETTING USER FEED");
+    //console.log("GETTING USER FEED");
     setLoading(true);
     try {
       /**
@@ -52,7 +52,7 @@ const Home: NextPage = () => {
 
       // User has joined communities
       if (communityStateValue.mySnippets.length) {
-        console.log("GETTING POSTS IN USER COMMUNITIES");
+        //console.log("GETTING POSTS IN USER COMMUNITIES");
 
         const myCommunityIds = communityStateValue.mySnippets.map(
           (snippet) => snippet.communityId
@@ -87,7 +87,7 @@ const Home: NextPage = () => {
       }
       // User has not joined any communities yet
       else {
-        console.log("USER HAS NO COMMUNITIES - GETTING GENERAL POSTS");
+        //console.log("USER HAS NO COMMUNITIES - GETTING GENERAL POSTS");
 
         const postQuery = query(
           collection(firestore, "posts"),
@@ -102,7 +102,7 @@ const Home: NextPage = () => {
         feedPosts.push(...posts);
       }
 
-      console.log("HERE ARE FEED POSTS", feedPosts);
+      //console.log("HERE ARE FEED POSTS", feedPosts);
 
       setPostStateValue((prev) => ({
         ...prev,
@@ -112,13 +112,13 @@ const Home: NextPage = () => {
       // if not in any, get 5 communities ordered by number of members
       // for each one, get 2 posts ordered by voteStatus and set these to postState posts
     } catch (error: any) {
-      console.log("getUserHomePosts error", error.message);
+      //console.log("getUserHomePosts error", error.message);
     }
     setLoading(false);
   };
 
   const getNoUserHomePosts = async () => {
-    console.log("GETTING NO USER FEED");
+    //console.log("GETTING NO USER FEED");
     setLoading(true);
     try {
       const postQuery = query(
@@ -131,14 +131,14 @@ const Home: NextPage = () => {
         id: doc.id,
         ...doc.data(),
       }));
-      console.log("NO USER FEED", posts);
+      //console.log("NO USER FEED", posts);
 
       setPostStateValue((prev) => ({
         ...prev,
         posts: posts as Post[],
       }));
     } catch (error: any) {
-      console.log("getNoUserHomePosts error", error.message);
+      //console.log("getNoUserHomePosts error", error.message);
     }
     setLoading(false);
   };
